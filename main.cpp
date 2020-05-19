@@ -23,10 +23,10 @@ int main() {
         l.emplace_back(v);
     }
 
-    cout << "0 - очистить список\n1 - вывести списокt\n2 - вставить элемент перед элементом x\n3 - вставить элемент после элемента x\n";
-    cout << "4 - вставить элемент в конец\n5 - удалить элементт\n6 - создать список l1, содержащий положительные числа, и список l2, содержащий отрицательные\n";
-    cout << "-1 - выйти\n";
-    cout << "Введите команду: ";
+    cout << "0 - clean the list\n1 - print the list\n2 - insert element before x\n3 - insert element after x\n";
+    cout << "4 - insert element in the end\n5 - remove element\n6 - create l1 with positive nums and l2 with negative nums\n";
+    cout << "-1 - exit\n";
+    cout << "Enter the action: ";
     cin >> x;
     while (x != -1)
     {
@@ -36,35 +36,35 @@ int main() {
                 l.clear();
                 break;
             case 1:
-                if (l.empty()) cout << "Список пуст\n";
+                if (l.empty()) cout << "List is empty\n";
                 else
                     for (it = l.begin(); it != l.end(); cout << *it << ' ', it++);
                 cout << "\n";
                 break;
             case 2:
-                if (l.empty()) cout << "Список пуст\n";
+                if (l.empty()) cout << "List is empty\n";
                 else
                 {
-                    cout << "Введите значение: ";
+                    cout << "Enter the value: ";
                     cin >> v;
-                    cout << "Введите значение x: ";
+                    cout << "Enter the value x: ";
                     cin >> y;
                     it = find(l.begin(), l.end(), y);
-                    if (it == l.end()) cout << "В списке нет такого элемента\n";
+                    if (it == l.end()) cout << "No such element\n";
                     else
                         l.emplace(it, v);
                 }
                 break;
             case 3:
-                if (l.empty()) cout << "Список пуст\n";
+                if (l.empty()) cout << "List is empty\n";
                 else
                 {
-                    cout << "Введите значение: ";
+                    cout << "Enter the value: ";
                     cin >> v;
-                    cout << "Введите значение x: ";
+                    cout << "Enter the value x: ";
                     cin >> y;
                     it = find(l.begin(), l.end(), y);
-                    if (it == l.end()) cout << "В списке нет такого элемента\n";
+                    if (it == l.end()) cout << "No such element\n";
                     else
                     {
                         it++;
@@ -73,36 +73,36 @@ int main() {
                 }
                 break;
             case 4:
-                cout << "Введите значение: ";
+                cout << "Enter the value: ";
                 cin >> v;
                 l.emplace_back(v);
                 break;
             case 5:
-                if (l.empty()) cout << "Список пуст\n";
+                if (l.empty()) cout << "List is empty\n";
                 else
                 {
-                    cout << "Введите значение: ";
+                    cout << "Enter the value: ";
                     cin >> v;
                     it = find(l.begin(), l.end(), v);
-                    if (it == l.end()) cout << "В списке нет такого элемента\n";
+                    if (it == l.end()) cout << "No such element\n";
                     else
                         l.erase(it);
                 }
                 break;
             case 6:
-                if (l.empty()) cout << "Список пуст\n";
+                if (l.empty()) cout << "List is empty\n";
                 else
                 {
                     pair < list<int>, list<int> > a = pml(l);
-                    cout << "Положительный список: ";
+                    cout << "Positive list: ";
                     for (it = a.first.begin(); it != a.first.end(); cout << *it << ' ', it++);
-                    cout<< "\nОтрицательный список: ";
+                    cout<< "\nNegative list: ";
                     for (it = a.second.begin(); it != a.second.end(); cout << *it << ' ', it++);
                     cout << "\n";
                 }
                 break;
             default:
-                cout << "Неверная команда\n";
+                cout << "Wrong action\n";
                 break;
         }
         cin >> x;
